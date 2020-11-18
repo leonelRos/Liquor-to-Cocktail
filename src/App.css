@@ -1,3 +1,4 @@
+/*Global styles*/
 body {
   margin: 0;
   padding: 0;
@@ -7,6 +8,10 @@ body {
 }
 body:hover {
   background: hsla(215, 66%, 94%, 0.733);
+}
+img {
+  width: 100%;
+  display: block;
 }
 
 /*THE NAVBAR PART*/
@@ -27,7 +32,7 @@ body:hover {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  width: 45rem;
+  width: 57rem;
 }
 
 .nav-links {
@@ -52,5 +57,41 @@ body:hover {
 @media screen and (max-width: 740px) {
   .navbar {
     width: 47rem;
+  }
+}
+
+/*THIS IS FOR SEARCH FORM*/
+.search {
+  margin-top: 4rem;
+  padding-bottom: 4rem;
+}
+.search-form {
+  width: 24vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  padding: 2rem 2.5rem;
+  text-transform: capitalize;
+  border-radius: 5px;
+  box-shadow: 2px 5px 3px 0px rgba(44 29 29 / 50%);
+  background: beige;
+}
+.form-type label {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: rgb(126, 77, 65);
+  text-align: center;
+}
+.form-type input {
+  width: 100%;
+  border: none;
+  border-color: transparent;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+@media screen and (max-width: 1024px) {
+  .search-form {
+    width: 85vw;
   }
 }

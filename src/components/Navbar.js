@@ -17,16 +17,16 @@ export default function Navbar() {
             <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about">new cocktail</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about">cocktail details</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about">Liquor/spirit</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about">News</Link>
           </li>
         </ul>
       </div>
