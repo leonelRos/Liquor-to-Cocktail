@@ -21,7 +21,7 @@ export default function SearchForm() {
     <section>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Search your favorite Cocktail</label>
+          <label>Search your favorite Cocktail </label>
           <input
             type="text"
             name="name"
