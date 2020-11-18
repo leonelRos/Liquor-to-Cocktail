@@ -23,6 +23,7 @@ export default function SearchForm() {
         <div className="form-type">
           <label>Search your favorite Cocktail </label>
           <input
+            autoFocus
             type="text"
             name="name"
             id="name"

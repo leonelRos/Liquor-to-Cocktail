@@ -23,6 +23,9 @@ img {
   border-bottom: 2px solid;
   box-shadow: rgba(0, 0, 0, 0.5);
 }
+.navbar:hover {
+  background: rgba(164, 170, 157, 0.712);
+}
 .logo {
   width: 8rem;
   height: 5rem;
@@ -89,6 +92,7 @@ img {
   border-color: transparent;
   border-radius: 5px;
   padding: 0.5rem;
+  outline: none;
 }
 @media screen and (max-width: 1024px) {
   .search-form {
