@@ -12,9 +12,9 @@ export default function CocktailList() {
     return <h2>No cocktails matched your search criteria</h2>;
   }
   return (
-    <section>
-      <h2>cocktails</h2>
-      <div>
+    <section className="list-content">
+      <h2 className="list-title">cocktails</h2>
+      <div className="cocktail-list">
         {cocktails.map((item) => {
           return <Cocktail key={item.id} {...item} />;
         })}

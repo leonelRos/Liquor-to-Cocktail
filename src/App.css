@@ -99,3 +99,24 @@ img {
     width: 85vw;
   }
 }
+
+/*THIS IS COCKTAIL LIST CSS*/
+.list-content {
+  padding: 5rem 0;
+}
+.list-title {
+  font-size: 2rem;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.cocktail-list {
+  width: 16rem;
+  margin: 0 auto;
+  max-width: 1170px;
+  display: grid;
+  row-gap: 2rem;
+  column-gap: 2rem;
+}
