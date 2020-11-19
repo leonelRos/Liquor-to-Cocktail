@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useCallback } from "react";
 
-const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+const url = `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_COCKTAIL_KEY}/search.php?s=`;
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
