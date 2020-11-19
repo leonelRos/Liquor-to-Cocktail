@@ -17,6 +17,7 @@
   cursor: pointer;
   background: #1f7f85d6;
   text-decoration: none;
+  outline: none;
 }
 .btn-primary:hover {
   background: #1fe2f0d6;
@@ -176,6 +177,10 @@ img {
   border-radius: 5px;
   transition: all 0.3s linear;
 }
+.cocktail:hover {
+  box-shadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
 .cocktail-footer {
   padding: 1.5rem;
 }
@@ -185,7 +190,7 @@ img {
   margin-bottom: 0.3rem;
 }
 .cocktail-footer h3 {
-  font-size: 2rem;
+  font-size: 1.85rem;
 }
 
 @media screen and (max-width: 821px) {
