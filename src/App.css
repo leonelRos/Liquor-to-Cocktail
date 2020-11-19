@@ -198,3 +198,41 @@ img {
     width: 100%;
   }
 }
+
+/*SINGLE LIST COCKTAIL*/
+.drink {
+  margin: 0 auto;
+  text-align: left;
+  width: 75rem;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+.drink img {
+  border-radius: 17px;
+}
+.drink p {
+  font-weight: bold;
+  text-transform: capitalize;
+  line-height: 1.8;
+}
+.drink span {
+  margin-right: 0.5rem;
+}
+.drink-data {
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  color: aqua;
+  background: blue;
+}
+.drink-info {
+  padding-top: 2rem;
+  padding: 3rem;
+}
+@media screen and (max-width: 1210px) {
+  .drink {
+    flex-direction: column;
+    width: 90%;
+    margin-left: 47px;
+  }
+}
