@@ -215,6 +215,7 @@ img {
   font-weight: bold;
   text-transform: capitalize;
   line-height: 1.8;
+  font-size: 1.6rem;
 }
 .drink span {
   margin-right: 0.5rem;
@@ -235,4 +236,25 @@ img {
     width: 90%;
     margin-left: 47px;
   }
+}
+
+/*ERROR*/
+.error-page {
+  display: flex;
+  justify-content: center;
+}
+.error-container {
+  text-align: center;
+  text-transform: capitalize;
+}
+/*ABOUT PAGE*/
+.about-section {
+  width: 85vw;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.about-section p {
+  line-height: 2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
 }

@@ -9,7 +9,9 @@ export default function CocktailList() {
     return <Loading />;
   }
   if (cocktails.length < 1) {
-    return <h2>No cocktails matched your search criteria</h2>;
+    return (
+      <h2 className="list-title">No cocktails matched your search criteria</h2>
+    );
   }
   return (
     <section className="list-content">
