@@ -1,3 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*BUTTON STYLES*/
+.btn-primary {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 0.45rem 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  background: transparent;
+  display: inline-block;
+  cursor: pointer;
+  background: #1f7f85d6;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: #1fe2f0d6;
+}
+
 /*Global styles*/
 body {
   margin: 0;
@@ -48,7 +72,7 @@ img {
   display: inline-block;
   margin-right: 0.5rem;
   letter-spacing: 1px;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.3rem;
   font-weight: bold;
   text-decoration: none;
   color: rgb(126, 77, 65);
@@ -69,7 +93,7 @@ img {
   padding-bottom: 4rem;
 }
 .search-form {
-  width: 24vw;
+  width: 24rem;
   margin: 0 auto;
   max-width: 1170px;
   padding: 2rem 2.5rem;
@@ -96,7 +120,11 @@ img {
 }
 @media screen and (max-width: 1024px) {
   .search-form {
-    width: 85vw;
+    width: 25rem;
+    margin: 0 auto;
+  }
+  .search {
+    width: 40rem;
   }
 }
 
@@ -113,10 +141,55 @@ img {
   margin-bottom: 2rem;
 }
 .cocktail-list {
-  width: 16rem;
+  width: 85vw;
   margin: 0 auto;
   max-width: 1170px;
-  display: grid;
+  /* display: grid;
   row-gap: 2rem;
-  column-gap: 2rem;
+  column-gap: 2rem; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 721px) {
+  .cocktail-list {
+    width: 40rem;
+    margin-left: 50px;
+  }
+}
+@media screen and (max-width: 821px) {
+  .list-title {
+    width: 45rem;
+  }
+}
+
+/*SINGLE COCKTAIL ON MAIN PAGE*/
+.cocktail {
+  width: 22rem;
+  background: #6ca9bc94;
+  margin-bottom: 2rem;
+  box-shadow: 2px 5px 3px 0px rgba(44 29 29 / 50%);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: 5px;
+  transition: all 0.3s linear;
+}
+.cocktail-footer {
+  padding: 1.5rem;
+}
+.cocktail-footer h3,
+.cocktail-footer h4,
+.cocktail-footer p {
+  margin-bottom: 0.3rem;
+}
+.cocktail-footer h3 {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 821px) {
+  .cocktail {
+    width: 100%;
+  }
 }
