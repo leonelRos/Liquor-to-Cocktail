@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const indexPost = (req, res) => {
-  res.send("hello world");
+  res.send("hello");
 };
 
 module.exports = {
