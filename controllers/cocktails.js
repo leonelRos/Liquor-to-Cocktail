@@ -1,9 +1,15 @@
 const mongoose = require("mongoose");
+const Cocktail = require("../models/cocktailSchema");
 
-const indexPost = (req, res) => {
-  res.send("hello");
+const cocktailIndex = async (req, res) => {
+  try {
+    const cocktails = await Cocktail.find();
+    res.status(200).json(cocktails);
+  } catch (error) {
+    res.status(404).json({ error: error.message });
+  }
 };
 
 module.exports = {
-  indexPost,
+  cocktailIndex,
 };
