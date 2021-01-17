@@ -10,6 +10,18 @@ const cocktailIndex = async (req, res) => {
   }
 };
 
+const create = async (req, res) => {
+  const cocktail = req.body;
+  const newCocktail = new Cocktail(cocktail);
+  try {
+    await newCocktail.save();
+    res.status(201).json(newCocktail);
+  } catch (error) {
+    res.status(409).json({ error: error.message });
+  }
+};
+
 module.exports = {
   cocktailIndex,
+  create,
 };

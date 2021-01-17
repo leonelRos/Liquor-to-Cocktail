@@ -17,7 +17,7 @@ export default function Navbar() {
             <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="/about">new cocktail</Link>
+            <Link to="/newCocktail">new cocktail</Link>
           </li>
           <li>
             <Link to="/about">cocktail details</Link>

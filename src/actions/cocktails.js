@@ -9,3 +9,12 @@ export const getCocktails = () => async (dispatch) => {
     console.log(error.message);
   }
 };
+
+export const createCocktails = (cocktail) => async (dispatch) => {
+  try {
+    const { data } = await api.createCocktails(cocktail);
+    dispatch({ type: "CREATE", payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
