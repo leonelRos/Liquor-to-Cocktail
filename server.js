@@ -29,6 +29,7 @@ mongoose
   .connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true,
   })
   .then(() => {
     app.listen(PORT, () => console.log(`server running in ${PORT}`));
