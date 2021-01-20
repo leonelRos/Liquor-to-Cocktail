@@ -31,7 +31,7 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
         </Typography>
       </div>
 
-      <div>
+      <div className={styles.overlay2}>
         <Button
           style={{ color: "white" }}
           size="small"
