@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import FileBase from "react-file-base64";
 import { createCocktails } from "../../actions/cocktails";
+import useStyles from "./style";
 
 const AddForm = ({ currentId, setCurrentId }) => {
   const [addCocktail, setAddCocktail] = useState({
@@ -28,6 +29,7 @@ const AddForm = ({ currentId, setCurrentId }) => {
   //   currentId ? state.cocktails.find((c) => c._id === currentId) : null
   // );
   const dispatch = useDispatch();
+  const styles = useStyles();
 
   // useEffect(() => {
   //   if (cocktails) setAddCocktail(cocktails);
@@ -64,10 +66,16 @@ const AddForm = ({ currentId, setCurrentId }) => {
   };
 
   return (
-    <Paper>
-      <form autoComplete="off" noValidate onSubmit={handleSubmit}>
+    <Paper className={styles.paper}>
+      <form
+        autoComplete="off"
+        noValidate
+        className={`${styles.root} ${styles.form}`}
+        onSubmit={handleSubmit}
+      >
         <Typography variant="h6">Creating a Cocktail</Typography>
         <TextField
+          autoFocus
           name="title"
           variant="outlined"
           label="Title"
@@ -218,7 +226,7 @@ const AddForm = ({ currentId, setCurrentId }) => {
             setAddCocktail({ ...addCocktail, preparation: e.target.value })
           }
         />
-        <div>
+        <div className={styles.fileInput}>
           <FileBase
             type="file"
             multiple={false}
@@ -227,6 +235,7 @@ const AddForm = ({ currentId, setCurrentId }) => {
             }
           ></FileBase>
           <Button
+            className={styles.buttonSubmit}
             variant="contained"
             color="primary"
             size="large"
