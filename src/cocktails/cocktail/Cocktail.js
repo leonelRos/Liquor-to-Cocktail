@@ -25,7 +25,7 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
         image={cocktail.selectedFiles}
         title={cocktail.title}
       />
-      <div>
+      <div className={styles.overlay}>
         <Typography variant="h6">{cocktail.title}</Typography>
         <Typography variant="body2">
           {moment(cocktail.createdAt).fromNow()}
@@ -41,12 +41,13 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
           <MoreHorizIcon fontSize="default" />
         </Button>
       </div>
-      <div>
+
+      <div className={styles.details}>
         <Typography variant="body2" color="textSecondary">
           {cocktail.tags.map((tag) => `#${tag}`)}
         </Typography>
       </div>
-      <Typography variant="h5" gutterBottom>
+      <Typography className={styles.title} variant="h5" gutterBottom>
         {cocktail.title}
       </Typography>
       <CardContent>
@@ -156,7 +157,7 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
         </Typography>
       </CardContent>
 
-      <CardActions>
+      <CardActions className={styles.cardActions}>
         <Button
           size="small"
           color="primary"

@@ -4,10 +4,12 @@ import { getCocktails } from "../actions/cocktails";
 import { useDispatch } from "react-redux";
 import AddForm from "../components/form/AddForm";
 import Cocktails from "../cocktails/Cocktails";
+import useStyles from "./NewCocktailstyle";
 
 const NewCocktail = () => {
   const [currentId, setCurrentId] = useState(null);
 
+  const styles = useStyles();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,6 +21,7 @@ const NewCocktail = () => {
       <Grow in>
         <Container>
           <Grid
+            className={styles.mainContainer}
             container
             justify="space-between"
             alignItems="stretch"
