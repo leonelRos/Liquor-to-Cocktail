@@ -13,6 +13,7 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import moment from "moment";
 import { useDispatch } from "react-redux";
 import useStyles from "./styles";
+
 const Cocktail = ({ cocktail, setCurrentId }) => {
   const dispatch = useDispatch();
   //styles pulling from styles.js file

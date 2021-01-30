@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import FileBase from "react-file-base64";
-import { createCocktails } from "../../actions/cocktails";
+import { createCocktails, updateCocktail } from "../../actions/cocktails";
 import useStyles from "./style";
 
 const AddForm = ({ currentId, setCurrentId }) => {
@@ -25,19 +25,24 @@ const AddForm = ({ currentId, setCurrentId }) => {
     selectedFiles: "",
   });
 
-  // const cocktails = useSelector((state) =>
-  //   currentId ? state.cocktails.find((c) => c._id === currentId) : null
-  // );
+  const cocktail = useSelector((state) =>
+    currentId ? state.cocktails.find((c) => c._id === currentId) : null
+  );
   const dispatch = useDispatch();
   const styles = useStyles();
 
-  // useEffect(() => {
-  //   if (cocktails) setAddCocktail(cocktails);
-  // }, [cocktails]);
+  useEffect(() => {
+    if (cocktail) setAddCocktail(cocktail);
+  }, [cocktail]);
 
+  //here is we are checking when three dots are click editing shows up otherwise  show create
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createCocktails(addCocktail));
+    if (currentId) {
+      dispatch(updateCocktail(currentId, addCocktail));
+    } else {
+      dispatch(createCocktails(addCocktail));
+    }
     clear();
   };
 
@@ -71,7 +76,9 @@ const AddForm = ({ currentId, setCurrentId }) => {
         className={`${styles.root} ${styles.form}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">Creating a Cocktail</Typography>
+        <Typography variant="h6">
+          {currentId ? "Editing" : "Creating"} a Cocktail
+        </Typography>
         <TextField
           autoFocus
           name="title"

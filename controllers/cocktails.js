@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Cocktail = require("../models/cocktailSchema");
 
+//fetching all cocktails
 const cocktailIndex = async (req, res) => {
   try {
     const cocktails = await Cocktail.find();
@@ -10,6 +11,7 @@ const cocktailIndex = async (req, res) => {
   }
 };
 
+//create new cocktails
 const create = async (req, res) => {
   const cocktail = req.body;
   const newCocktail = new Cocktail(cocktail);
@@ -21,7 +23,21 @@ const create = async (req, res) => {
   }
 };
 
+//update current cocktail base on their ID
+const update = async (req, res) => {
+  const { id: _id } = req.params;
+  const cocktail = req.body;
+  if (!mongoose.Types.ObjectId.isValid(_id))
+    return res.status(404).send("Not post with the ID");
+
+  const updateCocktail = await Cocktail.findByIdAndUpdate(_id, cocktail, {
+    new: true,
+  });
+  res.json(updateCocktail);
+};
+
 module.exports = {
   cocktailIndex,
   create,
+  update,
 };
