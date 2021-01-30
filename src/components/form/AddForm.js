@@ -37,9 +37,7 @@ const AddForm = ({ currentId, setCurrentId }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     dispatch(createCocktails(addCocktail));
-
     clear();
   };
 
