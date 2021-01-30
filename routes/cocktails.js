@@ -4,5 +4,6 @@ const cocktailsCtrl = require("../controllers/cocktails");
 
 router.get("/", cocktailsCtrl.cocktailIndex);
 router.post("/", cocktailsCtrl.create);
+router.patch("/:id", cocktailsCtrl.update);
 
 module.exports = router;

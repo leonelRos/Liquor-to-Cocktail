@@ -10,6 +10,7 @@ export const getCocktails = () => async (dispatch) => {
   }
 };
 
+//actions to create a new cocktail
 export const createCocktails = (cocktail) => async (dispatch) => {
   try {
     const { data } = await api.createCocktails(cocktail);
@@ -18,3 +19,15 @@ export const createCocktails = (cocktail) => async (dispatch) => {
     console.log(error.message);
   }
 };
+
+//actions update a new cocktail
+export const updateCocktail = (id, cocktail) => async (dispatch) => {
+  try {
+    const { data } = await api.updateCoktail(id, cocktail);
+    dispatch({ type: "UPDATE", payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// Next Reducers  --->
