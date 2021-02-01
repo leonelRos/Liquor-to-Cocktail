@@ -247,7 +247,7 @@ const AddForm = ({ currentId, setCurrentId }) => {
             type="submit"
             fullWidth
           >
-            Submit
+            {currentId ? "Update" : "Submit"}
           </Button>
           <Button
             variant="contained"
