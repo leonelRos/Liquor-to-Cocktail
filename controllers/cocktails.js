@@ -25,6 +25,7 @@ const create = async (req, res) => {
 
 //update current cocktail base on their ID
 const update = async (req, res) => {
+  // destructuring id and check if _id is a mongoose ID
   const { id: _id } = req.params;
   const cocktail = req.body;
   if (!mongoose.Types.ObjectId.isValid(_id))
@@ -56,7 +57,14 @@ const likeCocktail = async (req, res) => {
     return res.status(404).send("not cocktails with ID");
 
   //assign the cocktail ID
-  //here add the functionality for the like cocktails
+  const cocktail = await Cocktail.findById(id);
+  //use the findbyIDUpdate because we will update the like button and increment everytime is pressed
+  const like = await Cocktail.findByIdAndUpdate(
+    id,
+    { likeCount: cocktail.likeCount + 1 },
+    { new: true }
+  );
+  res.json(like);
 };
 
 module.exports = {

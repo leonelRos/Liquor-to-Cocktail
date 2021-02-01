@@ -3,6 +3,8 @@ import * as api from "../api";
 //action creators
 export const getCocktails = () => async (dispatch) => {
   try {
+    // accesing fetchCocktails from API folder
+    //data is the entire object of our created json file
     const { data } = await api.fecthCocktails();
     dispatch({ type: "FETCH_ALL", payload: data });
   } catch (error) {
@@ -34,8 +36,20 @@ export const updateCocktail = (id, cocktail) => async (dispatch) => {
 //actions to delete cocktail
 export const deleteCocktail = (id) => async (dispatch) => {
   try {
+    // accesing deleteCOcktail from API folder
     await api.deleteCocktail(id);
     dispatch({ type: "DELETE", payload: id });
+  } catch (error) {
+    console.log(error);
+  }
+};
+//adding the like button
+export const likeCocktails = (id) => async (dispatch) => {
+  try {
+    // accesing likeCocktail from API folder
+    const { data } = await api.likeCocktail(id);
+    console.log("actions " + data);
+    dispatch({ type: "LIKE", payload: data });
   } catch (error) {
     console.log(error);
   }
