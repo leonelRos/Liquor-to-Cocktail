@@ -7,5 +7,6 @@ export const createCocktails = (newCocktail) => axios.post(url, newCocktail);
 export const updateCoktail = (id, updatedCocktail) =>
   axios.patch(`${url}/${id}`, updatedCocktail);
 export const deleteCocktail = (id) => axios.delete(`${url}/${id}`);
+export const likeCocktail = (id) => axios.patch(`${url}/${id}/likeCocktails`); //likeCocktails is the rout in Routes
 
 // next Actions --->

@@ -12,7 +12,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import moment from "moment";
 import { useDispatch } from "react-redux";
-import { deleteCocktail } from "../../actions/cocktails";
+import { deleteCocktail, likeCocktails } from "../../actions/cocktails";
 import useStyles from "./styles";
 
 const Cocktail = ({ cocktail, setCurrentId }) => {
@@ -163,7 +163,7 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
         <Button
           size="small"
           color="primary"
-          onClick={() => dispatch(cocktail._id)}
+          onClick={() => dispatch(likeCocktails(cocktail._id))}
         >
           <ThumbUpAltIcon fontSize="small" />
           {cocktail.likeCount}
