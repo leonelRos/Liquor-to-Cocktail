@@ -23,8 +23,19 @@ export const createCocktails = (cocktail) => async (dispatch) => {
 //actions update a new cocktail
 export const updateCocktail = (id, cocktail) => async (dispatch) => {
   try {
+    //destructuring the data because we need id and cocktail in order to be modified
     const { data } = await api.updateCoktail(id, cocktail);
     dispatch({ type: "UPDATE", payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//actions to delete cocktail
+export const deleteCocktail = (id) => async (dispatch) => {
+  try {
+    await api.deleteCocktail(id);
+    dispatch({ type: "DELETE", payload: id });
   } catch (error) {
     console.log(error);
   }

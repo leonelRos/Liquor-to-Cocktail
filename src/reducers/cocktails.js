@@ -1,6 +1,8 @@
 // eslint-disable-next-line
 export default (cocktails = [], action) => {
   switch (action.type) {
+    case "DELETE":
+      return cocktails.filter((cocktail) => cocktail._id !== action.payload);
     case "UPDATE":
       return cocktails.map((cocktail) =>
         cocktail._id === action.payload._id ? action.payload : cocktail
