@@ -49,9 +49,20 @@ const deleteCocktail = async (req, res) => {
   res.json({ message: "cocktail delete succesfully" });
 };
 
+const likeCocktail = async (req, res) => {
+  const { id } = req.params;
+  //need to check if ID exists in our server side
+  if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).send("not cocktails with ID");
+
+  //assign the cocktail ID
+  //here add the functionality for the like cocktails
+};
+
 module.exports = {
   cocktailIndex,
   create,
   update,
   delete: deleteCocktail,
+  likeCocktail,
 };
