@@ -17,7 +17,7 @@ const NewCocktail = () => {
   }, [dispatch]);
 
   return (
-    <Container maxWidth="lg">
+    <Container className={styles.cocktailDisplay} maxWidth="lg">
       <Grow in>
         <Container>
           <Grid

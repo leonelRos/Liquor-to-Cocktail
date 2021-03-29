@@ -45,9 +45,9 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
       </div>
 
       <div className={styles.details}>
-        <a variant="body2" color="textSecondary">
-          <Typography>{cocktail.tags.map((tag) => `#${tag}`)}</Typography>
-        </a>
+        <Typography variant="caption" color="textSecondary">
+          {cocktail.tags.map((tag) => `#${tag}`)}
+        </Typography>
       </div>
       <Typography className={styles.title} variant="h5" gutterBottom>
         {cocktail.title}

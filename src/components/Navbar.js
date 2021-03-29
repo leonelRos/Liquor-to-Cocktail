@@ -19,9 +19,7 @@ export default function Navbar() {
           <li>
             <Link to="/newCocktail">new cocktail</Link>
           </li>
-          <li>
-            <Link to="/about">cocktail details</Link>
-          </li>
+
           <li>
             <Link to="/about">spirit/wine</Link>
           </li>
