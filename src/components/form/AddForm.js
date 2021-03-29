@@ -239,26 +239,26 @@ const AddForm = ({ currentId, setCurrentId }) => {
               setAddCocktail({ ...addCocktail, selectedFiles: base64 })
             }
           ></FileBase>
-          <Button
-            className={styles.buttonSubmit}
-            variant="contained"
-            color="primary"
-            size="large"
-            type="submit"
-            fullWidth
-          >
-            {currentId ? "Update" : "Submit"}
-          </Button>
-          <Button
-            variant="contained"
-            color="secondary"
-            size="small"
-            onClick={clear}
-            fullWidth
-          >
-            Clear
-          </Button>
         </div>
+        <Button
+          className={styles.buttonSubmit}
+          variant="contained"
+          color="primary"
+          size="large"
+          type="submit"
+          fullWidth
+        >
+          {currentId ? "Update" : "Submit"}
+        </Button>
+        <Button
+          variant="contained"
+          color="secondary"
+          size="small"
+          onClick={clear}
+          fullWidth
+        >
+          Clear
+        </Button>
       </form>
     </Paper>
   );
