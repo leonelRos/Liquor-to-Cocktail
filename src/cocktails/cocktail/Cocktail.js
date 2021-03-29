@@ -45,9 +45,9 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
       </div>
 
       <div className={styles.details}>
-        <Typography variant="body2" color="textSecondary">
-          {cocktail.tags.map((tag) => `#${tag}`)}
-        </Typography>
+        <a variant="body2" color="textSecondary">
+          <Typography>{cocktail.tags.map((tag) => `#${tag}`)}</Typography>
+        </a>
       </div>
       <Typography className={styles.title} variant="h5" gutterBottom>
         {cocktail.title}
@@ -166,6 +166,7 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
           onClick={() => dispatch(likeCocktails(cocktail._id))}
         >
           <ThumbUpAltIcon fontSize="small" />
+          &nbsp;&nbsp;
           {cocktail.likeCount}
         </Button>
         <Button
@@ -174,7 +175,7 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
           onClick={() => dispatch(deleteCocktail(cocktail._id))}
         >
           <DeleteIcon fontSize="small" />
-          Delete
+          &nbsp; Delete
         </Button>
       </CardActions>
     </Card>
