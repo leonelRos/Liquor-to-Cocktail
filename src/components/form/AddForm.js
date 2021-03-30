@@ -121,6 +121,7 @@ const AddForm = ({ currentId, setCurrentId }) => {
             setAddCocktail({ ...addCocktail, tags: e.target.value.split(",") })
           }
         />
+
         <TextField
           name="ingredient1"
           variant="outlined"
