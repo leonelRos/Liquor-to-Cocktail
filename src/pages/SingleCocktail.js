@@ -106,6 +106,7 @@ export default function SingleCocktail() {
               {ingredients.map((item, index) => {
                 return item ? <span key={index}>{item}</span> : null;
               })}
+              {/* //I need to show measuremewnt and ingredients */}
             </p>
           </div>
         </div>
