@@ -13,7 +13,6 @@ export default function SingleCocktail() {
       try {
         const response = await fetch(
           `${process.env.REACT_APP_SINGLE_COCKTAIL_KEY}${id}`
-          // `https://www.thecocktaildb.com/api/json/v2/${process.env.REACT_APP_COCKTAIL_KEY}/lookup.php?i=${id}`
         );
         const data = await response.json();
         if (data.drinks) {
