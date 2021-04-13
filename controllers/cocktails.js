@@ -1,6 +1,18 @@
 const mongoose = require("mongoose");
 const Cocktail = require("../models/cocktailSchema");
 
+//fetching singler cocktails
+const fetchSingle = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const cocktail = await Cocktail.findById(id);
+    res.status(200).json(cocktail);
+    console.log(cocktail);
+  } catch (error) {
+    return res.status(404).json({ error: error.message });
+  }
+};
+
 //fetching all cocktails
 const cocktailIndex = async (req, res) => {
   try {
@@ -73,4 +85,5 @@ module.exports = {
   update,
   delete: deleteCocktail,
   likeCocktail,
+  fetchSingle,
 };
