@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const url = "http://localhost:3001";
+// const url = "http://localhost:3001";
+const url = "https://liquor-recipe.herokuapp.com/";
 
 export const fecthCocktails = () => axios.get(url);
 export const createCocktails = (newCocktail) => axios.post(url, newCocktail);
