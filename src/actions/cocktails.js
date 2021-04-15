@@ -1,5 +1,16 @@
 import * as api from "../api";
 
+//fetch single cocktail
+export const displayCocktail = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.fetchSingle(id);
+    console.log(data);
+    dispatch({ type: "FETCH_ONE", payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 //action creators
 export const getCocktails = () => async (dispatch) => {
   try {
@@ -48,7 +59,7 @@ export const likeCocktails = (id) => async (dispatch) => {
   try {
     // accesing likeCocktail from API folder
     const { data } = await api.likeCocktail(id);
-    console.log("actions " + data);
+    console.log(data);
     dispatch({ type: "LIKE", payload: data });
   } catch (error) {
     console.log(error);

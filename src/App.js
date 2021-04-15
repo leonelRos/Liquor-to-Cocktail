@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import SingleCocktail from "./pages/SingleCocktail";
 import Error from "./pages/Error";
+import CocktailDetail from "./pages/CocktailDetail";
 //import components
 import Navbar from "./components/Navbar";
 import NewCocktail from "./pages/NewCocktail";
@@ -21,11 +22,14 @@ function App() {
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/newCocktail">
-          <NewCocktail />
-        </Route>
         <Route path="/cocktail/:id">
           <SingleCocktail />
+        </Route>
+        <Route path="/newCocktail/:id">
+          <CocktailDetail />
+        </Route>
+        <Route path="/newCocktail">
+          <NewCocktail />
         </Route>
         <Route path="*">
           <Error />
