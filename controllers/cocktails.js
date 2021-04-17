@@ -83,10 +83,10 @@ const likeCocktail = async (req, res) => {
 };
 
 module.exports = {
+  fetchSingle,
   cocktailIndex,
   create,
   update,
   delete: deleteCocktail,
   likeCocktail,
-  fetchSingle,
 };

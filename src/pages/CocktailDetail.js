@@ -1,23 +1,95 @@
 import React, { useEffect } from "react";
 import { displayCocktail } from "../actions/cocktails";
+import { CircularProgress } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
 const CocktailDetail = () => {
-  const cocktail = useSelector((state) => state.cocktail);
-  const { id } = useParams();
-  console.log(id);
+  // const [newCocktail, setNewCocktail] = useState(null);
+
+  // const cocktail = useSelector((state) => state.cocktail);
   const dispatch = useDispatch();
+  const { id } = useParams();
+  const cocktail = useSelector((state) =>
+    id ? state.cocktails.find((c) => c._id === id) : null
+  );
+  console.log(id);
   console.log(cocktail);
 
+  // const fetchCocktail = () => {
+  //   dispatch(displayCocktail(id));
+  // };
+  // useEffect(() => {
+  //   if (id && id !== "") fetchCocktail();
+  // }, [id]);
   const fetchCocktail = () => {
-    dispatch(displayCocktail(id));
+    if (!cocktail || id === "") return;
   };
   useEffect(() => {
-    if (id && id !== "") fetchCocktail();
-  }, [id]);
+    dispatch(displayCocktail(id));
+    fetchCocktail();
+  }, [dispatch, id]);
 
-  return <div>cocktail Detail</div>;
+  if (!cocktail) {
+    return <CircularProgress />;
+  }
+  const {
+    title,
+    type_of_drink,
+    glass,
+    likeCount,
+    selectedFiles,
+    ingredient1,
+    ingredient2,
+    ingredient3,
+    ingredient4,
+    ingredient5,
+    ingredient6,
+  } = cocktail;
+
+  return (
+    <div>
+      <h1 className="list-title">{title}</h1>
+      <div className="drink">
+        <img className="img-detail" src={selectedFiles} alt="cocktail" />
+        <div className="drink-info">
+          <h2>
+            <span className="drink-data">Type of Drink: </span>
+            {type_of_drink}
+          </h2>
+          <h2>
+            <span className="drink-data">Glass: </span>
+            {glass}
+          </h2>
+          <h2>
+            <span className="drink-data">Likes: </span>
+            {likeCount}
+          </h2>
+          <h2>
+            <span className="drink-data">Ingredients: </span>
+          </h2>
+          <h2>
+            <li>{ingredient1}</li>
+          </h2>
+          <h2>
+            <li>{ingredient2}</li>
+          </h2>
+          <h2>
+            <li>{ingredient3}</li>
+          </h2>
+          <h2>
+            <li>{ingredient4}</li>
+          </h2>
+          <h2>
+            <li>{ingredient5}</li>
+          </h2>
+          <h2>
+            <li>{ingredient6}</li>
+          </h2>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default CocktailDetail;

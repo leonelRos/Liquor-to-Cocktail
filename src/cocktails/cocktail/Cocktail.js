@@ -179,7 +179,7 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
           &nbsp; Delete
         </Button>
       </CardActions>
-      <Link to={`/newCocktail/${cocktail._id}`} className="btn btn-primary">
+      <Link to={`/newCocktails/${cocktail._id}`} className="btn btn-primary">
         details
       </Link>
     </Card>

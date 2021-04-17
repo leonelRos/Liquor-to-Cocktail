@@ -25,7 +25,7 @@ function App() {
         <Route path="/cocktail/:id">
           <SingleCocktail />
         </Route>
-        <Route path="/newCocktail/:id">
+        <Route path="/newCocktails/:id">
           <CocktailDetail />
         </Route>
         <Route path="/newCocktail">

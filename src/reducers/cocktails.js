@@ -10,9 +10,7 @@ export default (cocktails = [], action) => {
         cocktail._id === action.payload._id ? action.payload : cocktail
       );
     case "FETCH_ONE":
-      return cocktails.map((cocktail) =>
-        cocktail._id === action.payload._id ? action.payload : cocktail
-      );
+      return [...cocktails, action.payload];
     case "CREATE":
       return [...cocktails, action.payload];
     case "FETCH_ALL":
