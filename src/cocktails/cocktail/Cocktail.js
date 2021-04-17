@@ -11,6 +11,7 @@ import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import moment from "moment";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteCocktail, likeCocktails } from "../../actions/cocktails";
 import useStyles from "./styles";
@@ -178,6 +179,9 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
           &nbsp; Delete
         </Button>
       </CardActions>
+      <Link to={`/newCocktails/${cocktail._id}`} className="btn btn-primary">
+        details
+      </Link>
     </Card>
   );
 };

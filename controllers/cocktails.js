@@ -1,6 +1,21 @@
 const mongoose = require("mongoose");
 const Cocktail = require("../models/cocktailSchema");
 
+//fetching singler cocktails
+const fetchSingle = async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  if (!mongoose.Types.ObjectId.isValid(id))
+    return res.status(404).send("not cocktails with ID");
+  try {
+    const cocktail = await Cocktail.findById(id);
+    res.status(200).json(cocktail);
+    console.log(cocktail);
+  } catch (error) {
+    return res.status(404).json({ error: error.message });
+  }
+};
+
 //fetching all cocktails
 const cocktailIndex = async (req, res) => {
   try {
@@ -68,6 +83,7 @@ const likeCocktail = async (req, res) => {
 };
 
 module.exports = {
+  fetchSingle,
   cocktailIndex,
   create,
   update,

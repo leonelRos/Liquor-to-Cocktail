@@ -39,6 +39,10 @@ img {
   display: block;
 }
 
+.img-detail {
+  width: 50%;
+}
+
 /*THE NAVBAR PART*/
 .navbar {
   background: hsla(215, 66%, 94%, 0.733);

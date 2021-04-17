@@ -3,6 +3,7 @@ const router = express.Router();
 const cocktailsCtrl = require("../controllers/cocktails");
 
 router.get("/", cocktailsCtrl.cocktailIndex);
+router.get("/newCocktails/:id", cocktailsCtrl.fetchSingle);
 router.post("/", cocktailsCtrl.create);
 router.patch("/:id", cocktailsCtrl.update);
 router.delete("/:id", cocktailsCtrl.delete);
