@@ -51,7 +51,7 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
         </Typography>
       </div>
       <Typography className={styles.title} variant="h5" gutterBottom>
-        {cocktail.title}
+        <Link to={`/newCocktails/${cocktail._id}`}>{cocktail.title}</Link>
       </Typography>
       <CardContent>
         <Typography
@@ -179,9 +179,6 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
           &nbsp; Delete
         </Button>
       </CardActions>
-      <Link to={`/newCocktails/${cocktail._id}`} className="btn btn-primary">
-        details
-      </Link>
     </Card>
   );
 };
