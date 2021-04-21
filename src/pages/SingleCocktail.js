@@ -36,20 +36,7 @@ export default function SingleCocktail() {
             strMeasure5,
             strMeasure6,
           } = data.drinks[0];
-          // const ingredients = [
-          //   strIngredient1,
-          //   strIngredient2,
-          //   strIngredient3,
-          //   strIngredient4,
-          //   strIngredient5,
-          // ];
-          // const measurements = [
-          //   strMeasure1,
-          //   strMeasure2,
-          //   strMeasure3,
-          //   strMeasure4,
-          //   strMeasure5,
-          // ];
+
           const newCocktail = {
             name,
             image,
