@@ -5,7 +5,7 @@ import { useParams, Link } from "react-router-dom";
 export default function SingleCocktail() {
   const { id } = useParams();
   const [loading, setLoading] = React.useState(false);
-  const [cocktail, setCocktail] = React.useState(null);
+  const [cocktail, setCocktail] = React.useState([]);
 
   React.useEffect(() => {
     setLoading(true);
@@ -28,14 +28,28 @@ export default function SingleCocktail() {
             strIngredient3,
             strIngredient4,
             strIngredient5,
+            strIngredient6,
+            strMeasure1,
+            strMeasure2,
+            strMeasure3,
+            strMeasure4,
+            strMeasure5,
+            strMeasure6,
           } = data.drinks[0];
-          const ingredients = [
-            strIngredient1,
-            strIngredient2,
-            strIngredient3,
-            strIngredient4,
-            strIngredient5,
-          ];
+          // const ingredients = [
+          //   strIngredient1,
+          //   strIngredient2,
+          //   strIngredient3,
+          //   strIngredient4,
+          //   strIngredient5,
+          // ];
+          // const measurements = [
+          //   strMeasure1,
+          //   strMeasure2,
+          //   strMeasure3,
+          //   strMeasure4,
+          //   strMeasure5,
+          // ];
           const newCocktail = {
             name,
             image,
@@ -43,11 +57,22 @@ export default function SingleCocktail() {
             category,
             glass,
             instructions,
-            ingredients,
+            strIngredient1,
+            strIngredient2,
+            strIngredient3,
+            strIngredient4,
+            strIngredient5,
+            strIngredient6,
+            strMeasure1,
+            strMeasure2,
+            strMeasure3,
+            strMeasure4,
+            strMeasure5,
+            strMeasure6,
           };
           setCocktail(newCocktail);
         } else {
-          setCocktail(null);
+          setCocktail([]);
         }
       } catch (error) {
         console.log(error);
@@ -56,21 +81,28 @@ export default function SingleCocktail() {
     }
     getCocktail();
   }, [id]);
+
+  // console.log(cocktail["strIngredient1"]);
+  const ingredients = [];
+  const getIngredients = () => {
+    let i = 1;
+    while (cocktail["strIngredient" + i]) {
+      const measure = cocktail["strMeasure" + i];
+      const portion = cocktail["strIngredient" + i];
+      ingredients.push(measure + "" + portion);
+      i++;
+    }
+    return ingredients;
+  };
+  getIngredients();
+
   if (loading) {
     return <Loading />;
   }
   if (!cocktail) {
     return <h2 className="list-title">No cocktail to display</h2>;
   } else {
-    const {
-      name,
-      image,
-      category,
-      info,
-      glass,
-      instructions,
-      ingredients,
-    } = cocktail;
+    const { name, image, category, info, glass, instructions } = cocktail;
     return (
       <section className="list-title">
         <Link to="/" className="btn btn-primary">
@@ -100,13 +132,14 @@ export default function SingleCocktail() {
               <span className="drink-data">instructions: </span>
               {instructions}
             </p>
-            <p>
+            <div>
               <span className="drink-data">Ingredients: </span>
-              {ingredients.map((item, index) => {
-                return item ? <span key={index}>{item}</span> : null;
-              })}
-              {/* //I need to show measuremewnt and ingredients */}
-            </p>
+              {ingredients.map((item, index) => (
+                <ul key={index}>
+                  <li>{item}</li>
+                </ul>
+              ))}
+            </div>
           </div>
         </div>
       </section>
