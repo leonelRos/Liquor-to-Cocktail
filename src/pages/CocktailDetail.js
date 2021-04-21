@@ -5,9 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
 const CocktailDetail = () => {
-  // const [newCocktail, setNewCocktail] = useState(null);
-
-  // const cocktail = useSelector((state) => state.cocktail);
   const dispatch = useDispatch();
   const { id } = useParams();
   const cocktail = useSelector((state) =>
@@ -16,12 +13,6 @@ const CocktailDetail = () => {
   console.log(id);
   console.log(cocktail);
 
-  // const fetchCocktail = () => {
-  //   dispatch(displayCocktail(id));
-  // };
-  // useEffect(() => {
-  //   if (id && id !== "") fetchCocktail();
-  // }, [id]);
   const fetchCocktail = () => {
     if (!cocktail || id === "") return;
   };
@@ -48,8 +39,11 @@ const CocktailDetail = () => {
   } = cocktail;
 
   return (
-    <div>
-      <h1 className="list-title">{title}</h1>
+    <div className="list-title">
+      <h1>{title}</h1>
+      <a className="btn btn-primary" href="/newCocktail">
+        Back home
+      </a>
       <div className="drink">
         <img className="img-detail" src={selectedFiles} alt="cocktail" />
         <div className="drink-info">
@@ -68,24 +62,24 @@ const CocktailDetail = () => {
           <p>
             <span className="drink-data">Ingredients: </span>
           </p>
-          <h2>
+          <p>
             <li>{ingredient1}</li>
-          </h2>
-          <h2>
+          </p>
+          <p>
             <li>{ingredient2}</li>
-          </h2>
-          <h2>
+          </p>
+          <p>
             <li>{ingredient3}</li>
-          </h2>
-          <h2>
+          </p>
+          <p>
             <li>{ingredient4}</li>
-          </h2>
-          <h2>
+          </p>
+          <p>
             <li>{ingredient5}</li>
-          </h2>
-          <h2>
+          </p>
+          <p>
             <li>{ingredient6}</li>
-          </h2>
+          </p>
         </div>
       </div>
     </div>
