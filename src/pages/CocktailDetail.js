@@ -53,21 +53,21 @@ const CocktailDetail = () => {
       <div className="drink">
         <img className="img-detail" src={selectedFiles} alt="cocktail" />
         <div className="drink-info">
-          <h2>
+          <p>
             <span className="drink-data">Type of Drink: </span>
             {type_of_drink}
-          </h2>
-          <h2>
+          </p>
+          <p>
             <span className="drink-data">Glass: </span>
             {glass}
-          </h2>
-          <h2>
+          </p>
+          <p>
             <span className="drink-data">Likes: </span>
             {likeCount}
-          </h2>
-          <h2>
+          </p>
+          <p>
             <span className="drink-data">Ingredients: </span>
-          </h2>
+          </p>
           <h2>
             <li>{ingredient1}</li>
           </h2>

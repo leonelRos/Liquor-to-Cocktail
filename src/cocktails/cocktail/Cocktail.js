@@ -50,9 +50,11 @@ const Cocktail = ({ cocktail, setCurrentId }) => {
           {cocktail.tags.map((tag) => `#${tag}`)}
         </Typography>
       </div>
-      <Typography className={styles.title} variant="h5" gutterBottom>
-        <Link to={`/newCocktails/${cocktail._id}`}>{cocktail.title}</Link>
-      </Typography>
+      <Link to={`/newCocktails/${cocktail._id}`}>
+        <Typography className={styles.title} variant="h5" gutterBottom>
+          {cocktail.title}
+        </Typography>
+      </Link>
       <CardContent>
         <Typography
           variant="body2"
