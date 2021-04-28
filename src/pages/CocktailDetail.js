@@ -39,9 +39,9 @@ const CocktailDetail = () => {
   } = cocktail;
 
   return (
-    <div className="list-title">
+    <div className="content list-title">
       <h1>{title}</h1>
-      <a className="btn btn-primary" href="/newCocktail">
+      <a href="/newCocktail" className="btn btn-primary">
         Back home
       </a>
       <div className="drink">

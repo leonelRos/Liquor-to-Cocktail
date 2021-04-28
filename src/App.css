@@ -211,6 +211,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-content: center;
+  padding-top: 3rem;
 }
 .drink img {
   border-radius: 17px;
