@@ -72,7 +72,8 @@ img {
   align-items: center;
   list-style-type: none;
 }
-.nav-links a {
+.nav-links a,
+button {
   text-transform: capitalize;
   display: inline-block;
   margin-right: 0.5rem;
