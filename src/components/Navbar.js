@@ -20,7 +20,6 @@ export default function Navbar() {
         {!isLoading && user && (
           <React.Fragment>
             <ul className="nav-links">
-              <LogoutButton />
               <li>
                 <Link to="/">Home</Link>
               </li>
@@ -37,6 +36,7 @@ export default function Navbar() {
               <li>
                 <Link to="/about">News</Link>
               </li>
+              <LogoutButton />
             </ul>
           </React.Fragment>
         )}
