@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import AuthenticationButton from "../components/authzero/AuthenticationButton";
-// import Login from "./authzero/Login";
-// import LogoutButton from "./authzero/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
 import cocktails_logo from "../logo/cocktails_logo.png";
 import Login from "./authzero/Login";
@@ -20,7 +17,6 @@ export default function Navbar() {
         {!isLoading && user && (
           <React.Fragment>
             <ul className="nav-links">
-              <LogoutButton />
               <li>
                 <Link to="/">Home</Link>
               </li>
@@ -37,6 +33,7 @@ export default function Navbar() {
               <li>
                 <Link to="/about">News</Link>
               </li>
+              <LogoutButton />
             </ul>
           </React.Fragment>
         )}
