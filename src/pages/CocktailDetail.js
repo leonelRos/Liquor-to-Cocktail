@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { displayCocktail } from "../actions/cocktails";
 import { CircularProgress } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const CocktailDetail = () => {
   const dispatch = useDispatch();
@@ -41,9 +41,9 @@ const CocktailDetail = () => {
   return (
     <div className="content list-title">
       <h1>{title}</h1>
-      <a href="/newCocktail" className="btn btn-primary">
-        Back home
-      </a>
+      <Link to="/newCocktail" className="btn btn-primary">
+        Back to cocktails
+      </Link>
       <div className="drink">
         <img className="img-detail" src={selectedFiles} alt="cocktail" />
         <div className="drink-info">
