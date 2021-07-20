@@ -4,7 +4,7 @@
 
 ### live version here
 
-![Cocktail-recipe](https://liquor-finder.netlify.app/)
+Cocktail-recipe(https://liquor-finder.netlify.app/)
 
 ![](https://github.com/leonelRos/Liquor-to-Cocktail/blob/main/image/Screen%20Shot%202021-03-02%20at%209.28.19%20PM.png)
 
